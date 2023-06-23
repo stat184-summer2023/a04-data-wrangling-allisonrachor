@@ -13,7 +13,7 @@ rm(list = ls())     # clean up your R environment
 # load packages
 library(tidyverse)  # includes lots of data verbs like `group_by()` and `summarise()`
 library(mosaicData) # includes the `HELPmiss` data set 
-
+library(esquisse)
 
 # Load the `HELPmiss` data set into our RStudio environment
 data("HELPmiss", package = "mosaicData")
@@ -41,9 +41,8 @@ data("HELPmiss", package = "mosaicData")
 
 ### Description
 
-  The data set comes from a clinical trial for adults that are inpatients from a detoxification unit. The patients received an assessment that helped provide them with eventual primary medical care. There are 470 observations recording 28 variables where each case represents a patient.
-
-
+  The data set comes from a clinical trial for adults that are inpatients from a detoxification unit. The patients received an assessment that helped provide them with eventual primary medical care. There are 470 observations recording 28 variables where each case represents a patient. To be eligible, the patient needed to speak English or Spanish, used alcohol, heroin, or cocaine, and live close to the clinic. Those who were pregnant, did not plan on staying in the area, already had a primary care relationship, or could not provide contact information were not eligible.
+  
 ## Task 2: Basic Summaries 
 
 *Produce one or more R expressions involving `summarize()` and `HELPmiss` to address each of the following prompts.*
@@ -53,13 +52,14 @@ data("HELPmiss", package = "mosaicData")
 ```{r}
 #Your code here 
 
+summarise(HELPmiss, cases = n())
 ```
 
 2. total number of times in the past 6 months entered a detox program (measured at baseline) for all the people in `HELPmiss`. 
 
 ```{r}
 #Your code here 
-
+summarise(HELPmiss, detox = sum(e2b, na.rm =TRUE))
 ```
 
 
@@ -68,7 +68,7 @@ data("HELPmiss", package = "mosaicData")
 
 ```{r}
 #Your code here 
-
+summarise(HELPmiss, first_use = mean(daysanysub, na.rm=TRUE))
 ```
 
 
@@ -87,34 +87,61 @@ data("HELPmiss", package = "mosaicData")
 ### males versus females
 ```{r}
 #Your code here
-
+HELPmiss %>%
+  group_by(sex) %>%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))
 ```
+This table shows that the males entered more detox programs within the past 6 months, and they used a substance after detoxing in a shorter amount of days compared to females.
+
 
 ### homeless or not
 ```{r}
 #Your code here
-
+HELPmiss %>%
+  group_by(homeless) %>%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))
 ```
+This tables shows that homeless people were in more detox programs in the past 6 months and used a substance in a shorter amount of time after detoxing.
 
 
 ### substance
 ```{r}
 #Your code here
-
+HELPmiss %>%
+  group_by(substance) %>%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))
 ```
+This table shows that alcohol is the most common substance abused within the patients, and is responsible for the most detox programs, but those who used heroin used a substance after detoxing much faster than the others.
+
 
 ### homeless versus housed broken down by sex
 ```{r}
 #Your code here
-
+HELPmiss %>%
+  group_by(homeless,sex) %>%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))
 ```
+This table shows that regardless of housing status, females went to a much lower amount of detox programs within the past 6 months, and they also used substances after detoxing, on average, after a longer period of time compared to males.
+
 
 ### homeless versus housed broken down by substance
 ```{r}
 #Your code here
-
+HELPmiss %>%
+  group_by(homeless,substance) %>%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))
 ```
-
+This tables shows that those who were homeless and abused alcohol, was the largest group of those who entered a detox program within the past 6 months regardless of any other housing/substance combination. However, those who were homeless and used heroin showed a significantly faster relapse after detoxing compared to other groups. 
 
 
 ## Task 4: Data Visualization & Observations
@@ -126,8 +153,13 @@ data("HELPmiss", package = "mosaicData")
 
 ```{r}
 # Your Code here.
-
+ggplot(HELPmiss) +
+  aes(x = age, y = hospitalizations, fill = sex, colour = sex) +
+  geom_point(shape = "circle", size = 1.5) +
+  scale_fill_hue(direction = 1) +
+  scale_color_hue(direction = 1) +
+  theme_minimal()
 ```
 
-
+This graph shows the spread of age compared to the number of hospitalizations males versus females. The plot shows similarly shaped distributions, but it looks like females might have a higher average of hospitalizations, regardless of age. There also looks like there is a possible outlier: a woman about 45 years old had 100 hospitalizations.
 

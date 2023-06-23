@@ -1758,17 +1758,17 @@ display: none;
 <h2>Set Up:</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0obGlzdCA9IGxzKCkpICAgICAjIGNsZWFuIHVwIHlvdXIgUiBlbnZpcm9ubWVudFxuXG4jIGxvYWQgcGFja2FnZXNcbmxpYnJhcnkodGlkeXZlcnNlKSAgIyBpbmNsdWRlcyBsb3RzIG9mIGRhdGEgdmVyYnMgbGlrZSBgZ3JvdXBfYnkoKWAgYW5kIGBzdW1tYXJpc2UoKWBcbmxpYnJhcnkobW9zYWljRGF0YSkgIyBpbmNsdWRlcyB0aGUgYEhFTFBtaXNzYCBkYXRhIHNldCBcblxuXG4jIExvYWQgdGhlIGBIRUxQbWlzc2AgZGF0YSBzZXQgaW50byBvdXIgUlN0dWRpbyBlbnZpcm9ubWVudFxuZGF0YShcIkhFTFBtaXNzXCIsIHBhY2thZ2UgPSBcIm1vc2FpY0RhdGFcIilcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0obGlzdCA9IGxzKCkpICAgICAjIGNsZWFuIHVwIHlvdXIgUiBlbnZpcm9ubWVudFxuXG4jIGxvYWQgcGFja2FnZXNcbmxpYnJhcnkodGlkeXZlcnNlKSAgIyBpbmNsdWRlcyBsb3RzIG9mIGRhdGEgdmVyYnMgbGlrZSBgZ3JvdXBfYnkoKWAgYW5kIGBzdW1tYXJpc2UoKWBcbmxpYnJhcnkobW9zYWljRGF0YSkgIyBpbmNsdWRlcyB0aGUgYEhFTFBtaXNzYCBkYXRhIHNldCBcbmxpYnJhcnkoZXNxdWlzc2UpXG5cbiMgTG9hZCB0aGUgYEhFTFBtaXNzYCBkYXRhIHNldCBpbnRvIG91ciBSU3R1ZGlvIGVudmlyb25tZW50XG5kYXRhKFwiSEVMUG1pc3NcIiwgcGFja2FnZSA9IFwibW9zYWljRGF0YVwiKVxuP0hFTFBtaXNzXG5gYGAifQ== -->
 <pre class="r"><code>rm(list = ls())     # clean up your R environment
 
 # load packages
 library(tidyverse)  # includes lots of data verbs like `group_by()` and `summarise()`
 library(mosaicData) # includes the `HELPmiss` data set 
-
+library(esquisse)
 
 # Load the `HELPmiss` data set into our RStudio environment
 data(&quot;HELPmiss&quot;, package = &quot;mosaicData&quot;)
-</code></pre>
+?HELPmiss</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1805,7 +1805,11 @@ provided</li>
 inpatients from a detoxification unit. The patients received an
 assessment that helped provide them with eventual primary medical care.
 There are 470 observations recording 28 variables where each case
-represents a patient.</p>
+represents a patient. To be eligible, the patient needed to speak
+English or Spanish, used alcohol, heroin, or cocaine, and live close to
+the clinic. Those who were pregnant, did not plan on staying in the
+area, already had a primary care relationship, or could not provide
+contact information were not eligible.</p>
 </div>
 </div>
 <div id="task-2-basic-summaries" class="section level2">
@@ -1818,226 +1822,249 @@ the following prompts.</em></p>
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI1lvdXIgY29kZSBoZXJlIFxuXG5gYGBcbmBgYCJ9 -->
-<pre class="r"><code>```r
-#Your code here 
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBoZXJlIFxuXG5zdW1tYXJpc2UoSEVMUG1pc3MsIGNhc2VzID0gbigpKVxuYGBgIn0= -->
+<pre class="r"><code>#Your code here 
 
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-2. total number of times in the past 6 months entered a detox program (measured at baseline) for all the people in `HELPmiss`. 
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI1lvdXIgY29kZSBoZXJlIFxuXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-#Your code here 
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-3. mean time (in days) to first use of any substance post-detox for all the people in `HELPmiss`
-
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI1lvdXIgY29kZSBoZXJlIFxuXG5gYGBcbmBgYCJ9 --&gt;
-
-```r
-```r
-#Your code here 
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-
-## Task 3: Group Summaries  
-
-*Repeat task 2 above, but add code chunks to calculate result group-by-group according to each prompt (i.e. each promt should have three statements for each of the three prompts in task 2).  Be sure to show all R code and write a sentence or two about what you observe in the results. Remember, you can add multiple statistics inside `summary`.* 
-
-
-- males versus females
-- homeless or not
-- substance
-- break down the homeless versus housed further, by sex
-- homeless versus housed broken down by substance
-
-### males versus females
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI1lvdXIgY29kZSBoZXJlXG5cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-#Your code here
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-### homeless or not
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI1lvdXIgY29kZSBoZXJlXG5cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-#Your code here
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-### substance
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI1lvdXIgY29kZSBoZXJlXG5cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-#Your code here
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-### homeless versus housed broken down by sex
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI1lvdXIgY29kZSBoZXJlXG5cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-#Your code here
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-### homeless versus housed broken down by substance
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI1lvdXIgY29kZSBoZXJlXG5cbmBgYFxuYGBgIn0= --&gt;
-
-```r
-```r
-#Your code here
-</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-
-## Task 4: Data Visualization &amp; Observations
-
-*Include one or more interesting plots from this data set involving at least 3 variables per plot. Write a few sentences to explain the story that your plot tells about these data.  You can expand on the relationships that you studied in Task 2, or you can explore a different group of variables in `HELPmiss` that show something interesting. Remember to use the interactive commands in the console, generate the R commands that will reproduce your plot, and then paste the R commands into an R chunk in the RMarkdown file.*  
-
-*Remember, you can use* `esquisser` *or* `mplot` *in your console. But only include the ggplot code in this Rmd document.*
-
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBZb3VyIENvZGUgaGVyZS5cblxuYGBgIn0= --&gt;
-
-```r
-# Your Code here.
-</code></pre>
+summarise(HELPmiss, cases = n())</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSDDlyAxXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVBXdzdDSUJEY1B0Q1V4RWZpT2NxSC9uZ0E0d0dNSnYzRnRtcGpoWWJTNkVrOVRuV3BrRmcrWUhlSG1XSDJzTXMyTktNQUVFRWM0VTJ3QlhJNjd0TXRRQnppRUVBTWlha3ZmRjROQU1Ec1Y0TzNSeUtDUDhvV20rVS9tUFBXZ0NObW91U1RPYmExTTJkc2w5ZTg5ZTFvd1RWbkY0VmFuSHBQTXBXTnJxUkFVV2pDRWs4Y0tBOVlkTUtrS05MODFvbDd1allmMkRRd1R1YW5ERC9XaWxpclNTbXVsU2hkOXBxZnk5b09jOXgyV0pZMXFoTGFiWUpveTdUVTNQRm9MbXVIREx0Qi93VytlUDh1b3dFQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["cases"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"470"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<ol start="2" style="list-style-type: decimal">
+<li>total number of times in the past 6 months entered a detox program
+(measured at baseline) for all the people in <code>HELPmiss</code>.</li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBoZXJlIFxuc3VtbWFyaXNlKEhFTFBtaXNzLCBkZXRveCA9IHN1bShlMmIsIG5hLnJtID1UUlVFKSlcbmBgYCJ9 -->
+<pre class="r"><code>#Your code here 
+summarise(HELPmiss, detox = sum(e2b, na.rm =TRUE))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSDDlyAxXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVB5dzdDSUJEY1B0QzBpWS9FYi9EWVhucnhBNHdmWURUcEZWdlVSb1NHMHRpdnJ5NFZFdVVBdXp2TURMUEhmVm1rWlFvQUVjUVIzZ1JiSU9mVElkc0J4Q0VPQWNTUW1Ecmc4MllDQUJiZkdtNDlFaEgweVRwczFyOWd6YlFjUEdhaTVDdDNiR3RuenI5ZHhXbm4yNlUxMVRTL0t0VGlOSHFTdVd4MUl3V0tRaE9XZU9KQWVjQ3FGeVpGblZYM1hqeXl3bnhnMDhCL01qOWwrTFpXeEZyTm1MZzFncm5zbkY0WXQ4TVN0NTJXelZ2VkNPMDJRYlRMdGRUVThkSktjb2RNdThINEFWUk9icUtqQVFBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["detox"],"name":[1],"type":["int"],"align":["right"]}],"data":[{"1":"549"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<ol start="3" style="list-style-type: decimal">
+<li>mean time (in days) to first use of any substance post-detox for all
+the people in <code>HELPmiss</code></li>
+</ol>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBoZXJlIFxuc3VtbWFyaXNlKEhFTFBtaXNzLCBmaXJzdF91c2UgPSBtZWFuKGRheXNhbnlzdWIsIG5hLnJtPVRSVUUpKVxuYGBgIn0= -->
+<pre class="r"><code>#Your code here 
+summarise(HELPmiss, first_use = mean(daysanysub, na.rm=TRUE))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSDDlyAxXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMVBTd3JDTUJDZDFrWnB3USs0OFJMdFJoY3VYWWdIS0FydUpMWlJpelVwU1lxZXdMTjVLblZTRXRCc01qTXY4OTY4bDYvMzgyU2ZBRUFQb2g2K0JGc2d1KzBtWFFKRUlRNEJSQkNiK3NEdmFRY0FqRXhkNVMvNm5OR250MGc0dlRHRnplUUhqRStWVlByUUt1WnR4MUxjTThjWVd2bkFseXhxcW56SnBLU2FaaWVKWEp6ZUhtVWdHbDBKanFUUW1DWWVPWkFlTUc2NWNWR214YVhsMTNSaERsZzM4Ty9NZHhsK3JCU3hVbjNHenhWbnpudE5qNnkyd3dqVGRtR3pSbFpjdXlTSXFrd0xUZDFlVW9qYUlWMDJlSDhCR3FKV2lxc0JBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["first_use"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"75.13095"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="task-3-group-summaries" class="section level2">
+<h2>Task 3: Group Summaries</h2>
+<p><em>Repeat task 2 above, but add code chunks to calculate result
+group-by-group according to each prompt (i.e. each promt should have
+three statements for each of the three prompts in task 2). Be sure to
+show all R code and write a sentence or two about what you observe in
+the results. Remember, you can add multiple statistics inside
+<code>summary</code>.</em></p>
+<ul>
+<li>males versus females</li>
+<li>homeless or not</li>
+<li>substance</li>
+<li>break down the homeless versus housed further, by sex</li>
+<li>homeless versus housed broken down by substance</li>
+</ul>
+<div id="males-versus-females" class="section level3">
+<h3>males versus females</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBoZXJlXG5IRUxQbWlzcyAlPiVcbiAgZ3JvdXBfYnkoc2V4KSAlPiVcbiAgc3VtbWFyaXNlKGNhc2VzID0gbigpLFxuICAgICAgICAgICAgZGV0b3ggPSBzdW0oZTJiLCBuYS5ybSA9VFJVRSksXG4gICAgICAgICAgICBmaXJzdF91c2UgPSBtZWFuKGRheXNhbnlzdWIsIG5hLnJtPVRSVUUpKVxuYGBgIn0= -->
+<pre class="r"><code>#Your code here
+HELPmiss %&gt;%
+  group_by(sex) %&gt;%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6NCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIyIMOXIDQiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCbDFSUVU3RE1CQjBHcnNva1NoSVNEeUJXM0pCU0J4N1FKdzRWVVVxRWhJeWlST2l1blpsTzlBanIrRVIvUUZuWHNJSEdqYXhqUm9mN04zWm5mWE9laGQzcSt0MGxTS0VZb1JqdUFtNGlEd3U3N05iaFBBRVFJUXdTbnE3Zy9RRk9CanNLVmliSE95SU9PWHNuWEVOM3ZtUXRWRzhvWng1UnNVR05LNGpuTDR5N3NwOE1OWnNGL0lLVHJVT2VOT0tGa1lxOEE1d25MeW9CaXVQOERmWVp6aXpIczhYVi92MTE1N1BsNy8xdzlQUFpkaEcwQTN6YmZDeEhDK0Rhc2c3VURJamZTYXBHcVhOUzZ2RENSTWxQM0wvN0tEcEU2NnU2dzZXaUx0Z3FyU2todWFWZ2hJNzJlaTVFN2sxalJUdzJLVGZDd21LSXhVRXpsclJOeSt6NHEwVjYreW1iK0IyaUp3Z3Q4OS9IOXVXeEFzai9ydVpxQnZCeHB1ellBWkREalBtVzlVSTR5ZUJxTTZOTk5UejBrSnlIN0ZiTy93QmhWS1dsbzRDQUFBPSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["sex"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["cases"],"name":[2],"type":["int"],"align":["right"]},{"label":["detox"],"name":[3],"type":["int"],"align":["right"]},{"label":["first_use"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"male","2":"359","3":"457","4":"72.60513"},{"1":"female","2":"111","3":"92","4":"83.77193"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>This table shows that the males entered more detox programs within
+the past 6 months, and they used a substance after detoxing in a shorter
+amount of days compared to females.</p>
+</div>
+<div id="homeless-or-not" class="section level3">
+<h3>homeless or not</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBoZXJlXG5IRUxQbWlzcyAlPiVcbiAgZ3JvdXBfYnkoaG9tZWxlc3MpICU+JVxuICBzdW1tYXJpc2UoY2FzZXMgPSBuKCksXG4gICAgICAgICAgICBkZXRveCA9IHN1bShlMmIsIG5hLnJtID1UUlVFKSxcbiAgICAgICAgICAgIGZpcnN0X3VzZSA9IG1lYW4oZGF5c2FueXN1YiwgbmEucm09VFJVRSkpXG5gYGAifQ== -->
+<pre class="r"><code>#Your code here
+HELPmiss %&gt;%
+  group_by(homeless) %&gt;%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6NCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIyIMOXIDQiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCbVZSdTA3RE1CUjFXNmZRU0R3a0pqWldobVFBQ1RGV3FPb0hGSkM2SVpNNEQrSGFsZTFBUnhaK2dxa2Z4Qi93S1pVU3JoTzdJdTVnMytlNXI3T1lMVy9EWllnUUdpRThnajhBRlFYUFQvUG9IaUU4QkdPQU1Kb1l1WUh3QlNnWTVBbklMdGpLWHVLWTBYZktGR2puYmRSNkMxRXBtbHJydUJBcnlxaFNIalpnNUpVeUMzWE9Vd010ZVg2bE5OSFZBU1JoUkNrUE1zNUlvb1VFcllibnB0M0IrLzFuYndId1pSb1llL280VjVjLytjMTBNYnZlUG54anZ3MG5LK3JhNElNMTNDeEUwYjJSVWkwMjFwaGtwVlQ2QlU3ZzFaMUk4Ukc3MnUxZ24vQTFUVk4zaWJqeFZndFRva21jU1lCMDYvWEtIWW0xTGdXSFlrUERWZUNCQjlKem5GWGNORStqcEtqNFczUm5HbGhla1IzSWNyelg3V1VDTjFqZ2JrNTVYbkxhWjlJeUNFdTJPOFpyV1hMdE5nR3ZpclhReE9XRmlXRE8wMUZYL3dFVkxLUnVvZ0lBQUE9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["homeless"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["cases"],"name":[2],"type":["int"],"align":["right"]},{"label":["detox"],"name":[3],"type":["int"],"align":["right"]},{"label":["first_use"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"housed","2":"251","3":"160","4":"77.10078"},{"1":"homeless","2":"219","3":"389","4":"73.06504"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>This tables shows that homeless people were in more detox programs in
+the past 6 months and used a substance in a shorter amount of time after
+detoxing.</p>
+</div>
+<div id="substance" class="section level3">
+<h3>substance</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBoZXJlXG5IRUxQbWlzcyAlPiVcbiAgZ3JvdXBfYnkoc3Vic3RhbmNlKSAlPiVcbiAgc3VtbWFyaXNlKGNhc2VzID0gbigpLFxuICAgICAgICAgICAgZGV0b3ggPSBzdW0oZTJiLCBuYS5ybSA9VFJVRSksXG4gICAgICAgICAgICBmaXJzdF91c2UgPSBtZWFuKGRheXNhbnlzdWIsIG5hLnJtPVRSVUUpKVxuYGBgIn0= -->
+<pre class="r"><code>#Your code here
+HELPmiss %&gt;%
+  group_by(substance) %&gt;%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NCwibmNvbCI6NCwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI0IMOXIDQiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCbVZTc1U3RE1CQjEwNlJWSTFHUTJKaTZNalFMQTR3WkVFUEhRcVZ1eUVtZDF1RGFsZTFBV1JBZndZakUxQVdKYmd6OEJWL1JEMkJpUUEyWHhDNDBWTHI2N3QyOTh6MWYrcWZESTMvb0k0VHF5SzNEdndjdThnWVhaOTBUaEZ3SGdocHlVU3MvNTVEZUI4ZUZjNmM4SVltUVU3Q0xlSXZRWU9TR01BWGVYcEV0MFNabXNaZ0lac05ZeEpoeVlqa1RJZ1hsTmptbFNsRStyalQyR0k0SU0zMHRlRENUZElybFhVZWxrZEtZeDZRamtnNk9Va1dxOUpoaHBTcjBSb0pqTFNSNGF6QXI3eDNzQ2V6QlNMWDRKMWdFOW1Id2RvNkg1OCt2NGVMK0xSeThySlpYcTJYWW83Mys0K0l3KzBMbXR6MEd4MU5TZlozV1p2ck5zRmhCbFFsR1JJdTVMVTJvVlByeXY3NldGTGVCYlo1UDdPVGpaMW4yWFJhNldVVzdQOElhQjRrRVNxbC9xMTFUekRRVkhKbzUrZmE5Q3JrbUs4QnV5dlBMUjkxNGt2THI3bkYrZ1hrbVpBYXFtV2Y4NCtkWGVuWXd6eTZGOFBIdnQySFdYZ1p0RUZsb0RHRHZYRnNsZ0twQUM0MXRuUjhMWnBGeXQrc2ZTMFhieWZRQ0FBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["substance"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["cases"],"name":[2],"type":["int"],"align":["right"]},{"label":["detox"],"name":[3],"type":["int"],"align":["right"]},{"label":["first_use"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"alcohol","2":"185","3":"242","4":"78.49495"},{"1":"cocaine","2":"156","3":"98","4":"86.67033"},{"1":"heroin","2":"128","3":"208","4":"52.82258"},{"1":"missing","2":"1","3":"1","4":"NaN"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>This table shows that alcohol is the most common substance abused
+within the patients, and is responsible for the most detox programs, but
+those who used heroin used a substance after detoxing much faster than
+the others.</p>
+</div>
+<div id="homeless-versus-housed-broken-down-by-sex" class="section level3">
+<h3>homeless versus housed broken down by sex</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBoZXJlXG5IRUxQbWlzcyAlPiVcbiAgZ3JvdXBfYnkoaG9tZWxlc3Msc2V4KSAlPiVcbiAgc3VtbWFyaXNlKGNhc2VzID0gbigpLFxuICAgICAgICAgICAgZGV0b3ggPSBzdW0oZTJiLCBuYS5ybSA9VFJVRSksXG4gICAgICAgICAgICBmaXJzdF91c2UgPSBtZWFuKGRheXNhbnlzdWIsIG5hLnJtPVRSVUUpKVxuYGBgIn0= -->
+<pre class="r"><code>#Your code here
+HELPmiss %&gt;%
+  group_by(homeless,sex) %&gt;%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ2hvbWVsZXNzJy4gWW91IGNhbiBvdmVycmlkZSB1c2luZyB0aGUgYC5ncm91cHNgIGFyZ3VtZW50LlxuIn0= -->
+<pre><code>`summarise()` has grouped output by &#39;homeless&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjQsIm5jb2wiOjUsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiNCDDlyA1Il0sIkdyb3VwcyI6WyJob21lbGVzcyBbMl0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCblZTdlU3RE1CQjI4d2VOUktuRXdNckVnTlFNc0RCbWFHR21hbEVsaEpCSm5EYkN0YXZZZ1M1SVRMd0FNeE5Qd01LSXhDUHdQcWpoa3RqUUdHSHBmT2Z2ZlA1OFA4UCs1TWlmK0FnaEd6azI3QzZZeUIyUFRuckhDRGtXSEZySVFlMVNMOEc5VTNwQmI0RjJLbWN0VmkyTkFJK1NXMElGV04zS3E5QVp6d1dKMVdsenh1ZUVFaUdNV0pmaWEwSlZxQVk3WldqS3BudENZcG4vQ1lrb0ZzSUk4UkljU1o2QnRUSitiZjNxOGhtck1QN3B6REVsUDYrUTZsVGR0QXVEd3haa1dic2MwOVdnUjVyK0RXUUE4Z3B5c0lZemtFTUl2bEI0cDhURDRkUDd5L1QrTkJ6dkorVUt6ejc2L1BFOENFZlB1NE5QZWZrUHN4OWppWU1rdzNOaTFLbWQ4YnVBQVM0VXRmVUFXMUVVWDJaQjlhVnUxWFN6WVd2SjZ3WmdRVFR1eGtSeTdXa25hU2JrRmZTOXJrU0Rab012Wk1vWkVGbHF1aHFKdERJRDJNNVorYkc0RjgxeWRsT09LZkpWTDVIS3FLVUtxbTIzcHZRS0l4bVBzR25LU0hQbTFLeEJsYXI4ZzBXV01xbXJDcWdJSkpkWTMvTWpUalZTZDNuMURROEpZZlZVQXdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["homeless"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["sex"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["cases"],"name":[3],"type":["int"],"align":["right"]},{"label":["detox"],"name":[4],"type":["int"],"align":["right"]},{"label":["first_use"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"housed","2":"male","3":"182","4":"110","5":"74.30851"},{"1":"housed","2":"female","3":"69","4":"50","5":"84.60000"},{"1":"homeless","2":"male","3":"177","4":"347","5":"71.01980"},{"1":"homeless","2":"female","3":"42","4":"42","5":"82.45455"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>This table shows that regardless of housing status, females went to a
+much lower amount of detox programs within the past 6 months, and they
+also used substances after detoxing, on average, after a longer period
+of time compared to males.</p>
+</div>
+<div id="homeless-versus-housed-broken-down-by-substance" class="section level3">
+<h3>homeless versus housed broken down by substance</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1lvdXIgY29kZSBoZXJlXG5IRUxQbWlzcyAlPiVcbiAgZ3JvdXBfYnkoaG9tZWxlc3Msc3Vic3RhbmNlKSAlPiVcbiAgc3VtbWFyaXNlKGNhc2VzID0gbigpLFxuICAgICAgICAgICAgZGV0b3ggPSBzdW0oZTJiLCBuYS5ybSA9VFJVRSksXG4gICAgICAgICAgICBmaXJzdF91c2UgPSBtZWFuKGRheXNhbnlzdWIsIG5hLnJtPVRSVUUpKVxuYGBgIn0= -->
+<pre class="r"><code>#Your code here
+HELPmiss %&gt;%
+  group_by(homeless,substance) %&gt;%
+  summarise(cases = n(),
+            detox = sum(e2b, na.rm =TRUE),
+            first_use = mean(daysanysub, na.rm=TRUE))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ2hvbWVsZXNzJy4gWW91IGNhbiBvdmVycmlkZSB1c2luZyB0aGUgYC5ncm91cHNgIGFyZ3VtZW50LlxuIn0= -->
+<pre><code>`summarise()` has grouped output by &#39;homeless&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjcsIm5jb2wiOjUsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiNyDDlyA1Il0sIkdyb3VwcyI6WyJob21lbGVzcyBbMl0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCbTFTTzAvRE1CQjIwNlNGU2p3a05xWUtpWUdoa1lBRkpKQWlnWmdRQ0FUaXNZQ2J1alRDc1ZIczhOaVFtTHAwWStSWE1QQTNHR0ZpNEI4d3dVSTRKM1pSREpZKyszd3YzM2UrM2ZYRHhjWmhBeUZVUlc0VmRnOUU1TzN2YmJTV0VISWR1RlNRaTBiVmVRM21LV1dGY3d6T2VtNzhoVk5HS2JoR3lTV2hBcVRKM0txMVBaNEswdEcza1I2UENTVkNXTEVleFcxQ2RhaFJqcXZRaUowMWhjUXkvUk1TVWl5RUZWTHI0bER5QktSdmk0R1Q4eS9MYnBIU3lYUVdWMmVwWXhyeUhxZm1HdklRUjR3TUdaR0VSOHdZNDBpb0lvdFUxY3dxYVBvaWlXS2MzRFJGMmdZYUxDUk4zbTNpTnZTa2lIRHRpQklGWkNoc0FrNEIyNEFZc0FLWTEzU016d3hnRm5BRWVBYXNBcTYwejdqeUNZNFgzbG9mYjM2d3R6WlllaDhzQit2Mysyb0ZXNCtMYWdVSFQwY2ZjM2VYd2M1cS8rV2gvNXA5SXIzK3JiVFJ3Ukw3M1FUSHhQcWIwWVJmK1F6MFFwZm4zTUtXWmRtWC9ZbkdhVElmT250SWRMWmg3NFpmandVeFZxOURKTDgycnQwb0VmSWs3NjdxWCtteE9yK1FFV2Z3bktObnZFU25rbGlLaVpTcDhqcXRzSmV5ODlheW9xemJpVFN2aW02OWtiM2l5VnBtVWFvUmR2WTdRWHJhOVpSRHIvSXUrREFxVEpyZWdsYjRra3RzL0JvaHAwWlR6TWIzRDFHUXV2cmFBd0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["homeless"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["substance"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["cases"],"name":[3],"type":["int"],"align":["right"]},{"label":["detox"],"name":[4],"type":["int"],"align":["right"]},{"label":["first_use"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"housed","2":"alcohol","3":"76","4":"34","5":"104.79487"},{"1":"housed","2":"cocaine","3":"96","4":"37","5":"81.05556"},{"1":"housed","2":"heroin","3":"79","4":"89","5":"41.16667"},{"1":"homeless","2":"alcohol","3":"109","4":"208","5":"61.40000"},{"1":"homeless","2":"cocaine","3":"60","4":"61","5":"94.86486"},{"1":"homeless","2":"heroin","3":"49","4":"119","5":"68.96154"},{"1":"homeless","2":"missing","3":"1","4":"1","5":"NaN"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>This tables shows that those who were homeless and abused alcohol,
+was the largest group of those who entered a detox program within the
+past 6 months regardless of any other housing/substance combination.
+However, those who were homeless and used heroin showed a significantly
+faster relapse after detoxing compared to other groups.</p>
+</div>
+</div>
+<div id="task-4-data-visualization-observations" class="section level2">
+<h2>Task 4: Data Visualization &amp; Observations</h2>
+<p><em>Include one or more interesting plots from this data set
+involving at least 3 variables per plot. Write a few sentences to
+explain the story that your plot tells about these data. You can expand
+on the relationships that you studied in Task 2, or you can explore a
+different group of variables in <code>HELPmiss</code> that show
+something interesting. Remember to use the interactive commands in the
+console, generate the R commands that will reproduce your plot, and then
+paste the R commands into an R chunk in the RMarkdown file.</em></p>
+<p><em>Remember, you can use</em> <code>esquisser</code> <em>or</em>
+<code>mplot</code> <em>in your console. But only include the ggplot code
+in this Rmd document.</em></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBZb3VyIENvZGUgaGVyZS5cbmdncGxvdChIRUxQbWlzcykgK1xuICBhZXMoeCA9IGFnZSwgeSA9IGhvc3BpdGFsaXphdGlvbnMsIGZpbGwgPSBzZXgsIGNvbG91ciA9IHNleCkgK1xuICBnZW9tX3BvaW50KHNoYXBlID0gXCJjaXJjbGVcIiwgc2l6ZSA9IDEuNSkgK1xuICBzY2FsZV9maWxsX2h1ZShkaXJlY3Rpb24gPSAxKSArXG4gIHNjYWxlX2NvbG9yX2h1ZShkaXJlY3Rpb24gPSAxKSArXG4gIHRoZW1lX21pbmltYWwoKVxuYGBgIn0= -->
+<pre class="r"><code># Your Code here.
+ggplot(HELPmiss) +
+  aes(x = age, y = hospitalizations, fill = sex, colour = sex) +
+  geom_point(shape = &quot;circle&quot;, size = 1.5) +
+  scale_fill_hue(direction = 1) +
+  scale_color_hue(direction = 1) +
+  theme_minimal()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-plot-begin eyJoZWlnaHQiOjQzMi42MzI5LCJ3aWR0aCI6NzAwLCJzaXplX2JlaGF2aW9yIjowLCJjb25kaXRpb25zIjpbXX0= -->
+<p><img src="data:image/png;base64,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" /></p>
+<!-- rnb-plot-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>This graph shows the spread of age compared to the number of
+hospitalizations males versus females. The plot shows similarly shaped
+distributions, but it looks like females might have a higher average of
+hospitalizations, regardless of age. There also looks like there is a
+possible outlier: a woman about 45 years old had 100
+hospitalizations.</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkhFTFBtaXNzIChEYXRhIFZlcmJzKSBBY3Rpdml0eSINCmF1dGhvcjogIkFsbGlzb24gUmFjaG9yIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KDQojIyBTZXQgVXA6DQoNCmBgYHtyIG1lc3NhZ2U9RkFMU0V9DQpybShsaXN0ID0gbHMoKSkgICAgICMgY2xlYW4gdXAgeW91ciBSIGVudmlyb25tZW50DQoNCiMgbG9hZCBwYWNrYWdlcw0KbGlicmFyeSh0aWR5dmVyc2UpICAjIGluY2x1ZGVzIGxvdHMgb2YgZGF0YSB2ZXJicyBsaWtlIGBncm91cF9ieSgpYCBhbmQgYHN1bW1hcmlzZSgpYA0KbGlicmFyeShtb3NhaWNEYXRhKSAjIGluY2x1ZGVzIHRoZSBgSEVMUG1pc3NgIGRhdGEgc2V0IA0KDQoNCiMgTG9hZCB0aGUgYEhFTFBtaXNzYCBkYXRhIHNldCBpbnRvIG91ciBSU3R1ZGlvIGVudmlyb25tZW50DQpkYXRhKCJIRUxQbWlzcyIsIHBhY2thZ2UgPSAibW9zYWljRGF0YSIpDQo/SEVMUG1pc3MNCmBgYA0KDQojIyBIZWxwZnVsIGxpbmtzOiANCg0KLSBMb29rIHRob3VnaCB0aGUgREMgVGV4dGJvb2sgZm9yIGB0aWR5dmVyc2VgIGZ1bmN0aW9ucy4gDQotIENoZWNrIG91dCBzb21lIG9mIHRoZXNlIFJTdHVkaW8gY2hlYXQgc2hlZXRzOg0KICAtIDxodHRwczovL3d3dy5yc3R1ZGlvLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAxNS8wMi9kYXRhLXdyYW5nbGluZy1jaGVhdHNoZWV0LnBkZj4gDQogIC0gPGh0dHBzOi8vd3d3LnJzdHVkaW8uY29tL3Jlc291cmNlcy9jaGVhdHNoZWV0cy8+DQogIC0gPGh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hc3NldHMuZGF0YWNhbXAuY29tL2Jsb2dfYXNzZXRzL1RpZHl2ZXJzZStDaGVhdCtTaGVldC5wZGY+DQogIA0KDQoNCg0KIyMgVGFzayAxOiBEYXRhIERlc2NyaXB0aW9uDQoNCipXcml0ZSBzZXZlcmFsIHNlbnRlbmNlcyAob3IgYSBidWxsZXQgbGlzdCkgZGVzY3JpYmluZyB0aGUgSEVMUCBTdHVkeSBhbmQgdGhlIHJlc3VsdGluZyBgSEVMUG1pc3NgIGRhdGEuICBZb3VyIGRlc2NyaXB0aW9uIHNob3VsZCBpbnZlc3RpZ2F0ZSBiYXNpYyBkYXRhIHByb3ZlbmFuY2UgKGUuZy4sIFdobywgV2hhdCwgV2hlbiwgV2hlcmUsIFdoeSwgSG93KSwgZXhwbGFpbiB0aGUgc2V0dGluZyBmb3IgdGhlIGRhdGEsIHNwZWNpZnkgd2hhdCBlYWNoIGNhc2UgcmVwcmVzZW50cyBpbiB0aGUgZGF0YSwgYW5kIHJlbWFyayBvbiBpbmNsdXNpb24vZXhjbHVzaW9uIGNyaXRlcmlhLiogDQoNCg0KLSBpbnZlc3RpZ2F0ZSBieSBzZWFyY2hpbmcgUiBoZWxwIGRvY3VtZW50YXRpb24NCi0gdGhlcmUncyBhIHJlc2VhcmNoIHBhcGVyIGNpdGVkIHdoZXJlIGFkZGl0aW9uYWwgZGV0YWlsIGlzIHByb3ZpZGVkDQoNCiMjIyBEZXNjcmlwdGlvbg0KDQogIFRoZSBkYXRhIHNldCBjb21lcyBmcm9tIGEgY2xpbmljYWwgdHJpYWwgZm9yIGFkdWx0cyB0aGF0IGFyZSBpbnBhdGllbnRzIGZyb20gYSBkZXRveGlmaWNhdGlvbiB1bml0LiBUaGUgcGF0aWVudHMgcmVjZWl2ZWQgYW4gYXNzZXNzbWVudCB0aGF0IGhlbHBlZCBwcm92aWRlIHRoZW0gd2l0aCBldmVudHVhbCBwcmltYXJ5IG1lZGljYWwgY2FyZS4gVGhlcmUgYXJlIDQ3MCBvYnNlcnZhdGlvbnMgcmVjb3JkaW5nIDI4IHZhcmlhYmxlcyB3aGVyZSBlYWNoIGNhc2UgcmVwcmVzZW50cyBhIHBhdGllbnQuDQoNCg0KIyMgVGFzayAyOiBCYXNpYyBTdW1tYXJpZXMgDQoNCipQcm9kdWNlIG9uZSBvciBtb3JlIFIgZXhwcmVzc2lvbnMgaW52b2x2aW5nIGBzdW1tYXJpemUoKWAgYW5kIGBIRUxQbWlzc2AgdG8gYWRkcmVzcyBlYWNoIG9mIHRoZSBmb2xsb3dpbmcgcHJvbXB0cy4qDQoNCjEuIG51bWJlciBvZiBwZW9wbGUgKGNhc2VzKSBpbiBgSEVMUG1pc3NgIHN0dWR5DQoNCmBgYHtyfQ0KI1lvdXIgY29kZSBoZXJlIA0KDQpgYGANCg0KMi4gdG90YWwgbnVtYmVyIG9mIHRpbWVzIGluIHRoZSBwYXN0IDYgbW9udGhzIGVudGVyZWQgYSBkZXRveCBwcm9ncmFtIChtZWFzdXJlZCBhdCBiYXNlbGluZSkgZm9yIGFsbCB0aGUgcGVvcGxlIGluIGBIRUxQbWlzc2AuIA0KDQpgYGB7cn0NCiNZb3VyIGNvZGUgaGVyZSANCg0KYGBgDQoNCg0KMy4gbWVhbiB0aW1lIChpbiBkYXlzKSB0byBmaXJzdCB1c2Ugb2YgYW55IHN1YnN0YW5jZSBwb3N0LWRldG94IGZvciBhbGwgdGhlIHBlb3BsZSBpbiBgSEVMUG1pc3NgDQoNCg0KYGBge3J9DQojWW91ciBjb2RlIGhlcmUgDQoNCmBgYA0KDQoNCg0KIyMgVGFzayAzOiBHcm91cCBTdW1tYXJpZXMgIA0KDQoqUmVwZWF0IHRhc2sgMiBhYm92ZSwgYnV0IGFkZCBjb2RlIGNodW5rcyB0byBjYWxjdWxhdGUgcmVzdWx0IGdyb3VwLWJ5LWdyb3VwIGFjY29yZGluZyB0byBlYWNoIHByb21wdCAoaS5lLiBlYWNoIHByb210IHNob3VsZCBoYXZlIHRocmVlIHN0YXRlbWVudHMgZm9yIGVhY2ggb2YgdGhlIHRocmVlIHByb21wdHMgaW4gdGFzayAyKS4gIEJlIHN1cmUgdG8gc2hvdyBhbGwgUiBjb2RlIGFuZCB3cml0ZSBhIHNlbnRlbmNlIG9yIHR3byBhYm91dCB3aGF0IHlvdSBvYnNlcnZlIGluIHRoZSByZXN1bHRzLiBSZW1lbWJlciwgeW91IGNhbiBhZGQgbXVsdGlwbGUgc3RhdGlzdGljcyBpbnNpZGUgYHN1bW1hcnlgLiogDQoNCg0KLSBtYWxlcyB2ZXJzdXMgZmVtYWxlcw0KLSBob21lbGVzcyBvciBub3QNCi0gc3Vic3RhbmNlDQotIGJyZWFrIGRvd24gdGhlIGhvbWVsZXNzIHZlcnN1cyBob3VzZWQgZnVydGhlciwgYnkgc2V4DQotIGhvbWVsZXNzIHZlcnN1cyBob3VzZWQgYnJva2VuIGRvd24gYnkgc3Vic3RhbmNlDQoNCiMjIyBtYWxlcyB2ZXJzdXMgZmVtYWxlcw0KYGBge3J9DQojWW91ciBjb2RlIGhlcmUNCg0KYGBgDQoNCiMjIyBob21lbGVzcyBvciBub3QNCmBgYHtyfQ0KI1lvdXIgY29kZSBoZXJlDQoNCmBgYA0KDQoNCiMjIyBzdWJzdGFuY2UNCmBgYHtyfQ0KI1lvdXIgY29kZSBoZXJlDQoNCmBgYA0KDQojIyMgaG9tZWxlc3MgdmVyc3VzIGhvdXNlZCBicm9rZW4gZG93biBieSBzZXgNCmBgYHtyfQ0KI1lvdXIgY29kZSBoZXJlDQoNCmBgYA0KDQojIyMgaG9tZWxlc3MgdmVyc3VzIGhvdXNlZCBicm9rZW4gZG93biBieSBzdWJzdGFuY2UNCmBgYHtyfQ0KI1lvdXIgY29kZSBoZXJlDQoNCmBgYA0KDQoNCg0KIyMgVGFzayA0OiBEYXRhIFZpc3VhbGl6YXRpb24gJiBPYnNlcnZhdGlvbnMNCg0KKkluY2x1ZGUgb25lIG9yIG1vcmUgaW50ZXJlc3RpbmcgcGxvdHMgZnJvbSB0aGlzIGRhdGEgc2V0IGludm9sdmluZyBhdCBsZWFzdCAzIHZhcmlhYmxlcyBwZXIgcGxvdC4gV3JpdGUgYSBmZXcgc2VudGVuY2VzIHRvIGV4cGxhaW4gdGhlIHN0b3J5IHRoYXQgeW91ciBwbG90IHRlbGxzIGFib3V0IHRoZXNlIGRhdGEuICBZb3UgY2FuIGV4cGFuZCBvbiB0aGUgcmVsYXRpb25zaGlwcyB0aGF0IHlvdSBzdHVkaWVkIGluIFRhc2sgMiwgb3IgeW91IGNhbiBleHBsb3JlIGEgZGlmZmVyZW50IGdyb3VwIG9mIHZhcmlhYmxlcyBpbiBgSEVMUG1pc3NgIHRoYXQgc2hvdyBzb21ldGhpbmcgaW50ZXJlc3RpbmcuIFJlbWVtYmVyIHRvIHVzZSB0aGUgaW50ZXJhY3RpdmUgY29tbWFuZHMgaW4gdGhlIGNvbnNvbGUsIGdlbmVyYXRlIHRoZSBSIGNvbW1hbmRzIHRoYXQgd2lsbCByZXByb2R1Y2UgeW91ciBwbG90LCBhbmQgdGhlbiBwYXN0ZSB0aGUgUiBjb21tYW5kcyBpbnRvIGFuIFIgY2h1bmsgaW4gdGhlIFJNYXJrZG93biBmaWxlLiogIA0KDQoqUmVtZW1iZXIsIHlvdSBjYW4gdXNlKiBgZXNxdWlzc2VyYCAqb3IqIGBtcGxvdGAgKmluIHlvdXIgY29uc29sZS4gQnV0IG9ubHkgaW5jbHVkZSB0aGUgZ2dwbG90IGNvZGUgaW4gdGhpcyBSbWQgZG9jdW1lbnQuKg0KDQoNCmBgYHtyfQ0KIyBZb3VyIENvZGUgaGVyZS4NCg0KYGBgDQoNCg0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkhFTFBtaXNzIChEYXRhIFZlcmJzKSBBY3Rpdml0eSINCmF1dGhvcjogIkFsbGlzb24gUmFjaG9yIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KDQojIyBTZXQgVXA6DQoNCmBgYHtyIG1lc3NhZ2U9RkFMU0V9DQpybShsaXN0ID0gbHMoKSkgICAgICMgY2xlYW4gdXAgeW91ciBSIGVudmlyb25tZW50DQoNCiMgbG9hZCBwYWNrYWdlcw0KbGlicmFyeSh0aWR5dmVyc2UpICAjIGluY2x1ZGVzIGxvdHMgb2YgZGF0YSB2ZXJicyBsaWtlIGBncm91cF9ieSgpYCBhbmQgYHN1bW1hcmlzZSgpYA0KbGlicmFyeShtb3NhaWNEYXRhKSAjIGluY2x1ZGVzIHRoZSBgSEVMUG1pc3NgIGRhdGEgc2V0IA0KbGlicmFyeShlc3F1aXNzZSkNCg0KIyBMb2FkIHRoZSBgSEVMUG1pc3NgIGRhdGEgc2V0IGludG8gb3VyIFJTdHVkaW8gZW52aXJvbm1lbnQNCmRhdGEoIkhFTFBtaXNzIiwgcGFja2FnZSA9ICJtb3NhaWNEYXRhIikNCj9IRUxQbWlzcw0KYGBgDQoNCiMjIEhlbHBmdWwgbGlua3M6IA0KDQotIExvb2sgdGhvdWdoIHRoZSBEQyBUZXh0Ym9vayBmb3IgYHRpZHl2ZXJzZWAgZnVuY3Rpb25zLiANCi0gQ2hlY2sgb3V0IHNvbWUgb2YgdGhlc2UgUlN0dWRpbyBjaGVhdCBzaGVldHM6DQogIC0gPGh0dHBzOi8vd3d3LnJzdHVkaW8uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE1LzAyL2RhdGEtd3JhbmdsaW5nLWNoZWF0c2hlZXQucGRmPiANCiAgLSA8aHR0cHM6Ly93d3cucnN0dWRpby5jb20vcmVzb3VyY2VzL2NoZWF0c2hlZXRzLz4NCiAgLSA8aHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL2Fzc2V0cy5kYXRhY2FtcC5jb20vYmxvZ19hc3NldHMvVGlkeXZlcnNlK0NoZWF0K1NoZWV0LnBkZj4NCiAgDQoNCg0KDQojIyBUYXNrIDE6IERhdGEgRGVzY3JpcHRpb24NCg0KKldyaXRlIHNldmVyYWwgc2VudGVuY2VzIChvciBhIGJ1bGxldCBsaXN0KSBkZXNjcmliaW5nIHRoZSBIRUxQIFN0dWR5IGFuZCB0aGUgcmVzdWx0aW5nIGBIRUxQbWlzc2AgZGF0YS4gIFlvdXIgZGVzY3JpcHRpb24gc2hvdWxkIGludmVzdGlnYXRlIGJhc2ljIGRhdGEgcHJvdmVuYW5jZSAoZS5nLiwgV2hvLCBXaGF0LCBXaGVuLCBXaGVyZSwgV2h5LCBIb3cpLCBleHBsYWluIHRoZSBzZXR0aW5nIGZvciB0aGUgZGF0YSwgc3BlY2lmeSB3aGF0IGVhY2ggY2FzZSByZXByZXNlbnRzIGluIHRoZSBkYXRhLCBhbmQgcmVtYXJrIG9uIGluY2x1c2lvbi9leGNsdXNpb24gY3JpdGVyaWEuKiANCg0KDQotIGludmVzdGlnYXRlIGJ5IHNlYXJjaGluZyBSIGhlbHAgZG9jdW1lbnRhdGlvbg0KLSB0aGVyZSdzIGEgcmVzZWFyY2ggcGFwZXIgY2l0ZWQgd2hlcmUgYWRkaXRpb25hbCBkZXRhaWwgaXMgcHJvdmlkZWQNCg0KIyMjIERlc2NyaXB0aW9uDQoNCiAgVGhlIGRhdGEgc2V0IGNvbWVzIGZyb20gYSBjbGluaWNhbCB0cmlhbCBmb3IgYWR1bHRzIHRoYXQgYXJlIGlucGF0aWVudHMgZnJvbSBhIGRldG94aWZpY2F0aW9uIHVuaXQuIFRoZSBwYXRpZW50cyByZWNlaXZlZCBhbiBhc3Nlc3NtZW50IHRoYXQgaGVscGVkIHByb3ZpZGUgdGhlbSB3aXRoIGV2ZW50dWFsIHByaW1hcnkgbWVkaWNhbCBjYXJlLiBUaGVyZSBhcmUgNDcwIG9ic2VydmF0aW9ucyByZWNvcmRpbmcgMjggdmFyaWFibGVzIHdoZXJlIGVhY2ggY2FzZSByZXByZXNlbnRzIGEgcGF0aWVudC4gVG8gYmUgZWxpZ2libGUsIHRoZSBwYXRpZW50IG5lZWRlZCB0byBzcGVhayBFbmdsaXNoIG9yIFNwYW5pc2gsIHVzZWQgYWxjb2hvbCwgaGVyb2luLCBvciBjb2NhaW5lLCBhbmQgbGl2ZSBjbG9zZSB0byB0aGUgY2xpbmljLiBUaG9zZSB3aG8gd2VyZSBwcmVnbmFudCwgZGlkIG5vdCBwbGFuIG9uIHN0YXlpbmcgaW4gdGhlIGFyZWEsIGFscmVhZHkgaGFkIGEgcHJpbWFyeSBjYXJlIHJlbGF0aW9uc2hpcCwgb3IgY291bGQgbm90IHByb3ZpZGUgY29udGFjdCBpbmZvcm1hdGlvbiB3ZXJlIG5vdCBlbGlnaWJsZS4NCiAgDQojIyBUYXNrIDI6IEJhc2ljIFN1bW1hcmllcyANCg0KKlByb2R1Y2Ugb25lIG9yIG1vcmUgUiBleHByZXNzaW9ucyBpbnZvbHZpbmcgYHN1bW1hcml6ZSgpYCBhbmQgYEhFTFBtaXNzYCB0byBhZGRyZXNzIGVhY2ggb2YgdGhlIGZvbGxvd2luZyBwcm9tcHRzLioNCg0KMS4gbnVtYmVyIG9mIHBlb3BsZSAoY2FzZXMpIGluIGBIRUxQbWlzc2Agc3R1ZHkNCg0KYGBge3J9DQojWW91ciBjb2RlIGhlcmUgDQoNCnN1bW1hcmlzZShIRUxQbWlzcywgY2FzZXMgPSBuKCkpDQpgYGANCg0KMi4gdG90YWwgbnVtYmVyIG9mIHRpbWVzIGluIHRoZSBwYXN0IDYgbW9udGhzIGVudGVyZWQgYSBkZXRveCBwcm9ncmFtIChtZWFzdXJlZCBhdCBiYXNlbGluZSkgZm9yIGFsbCB0aGUgcGVvcGxlIGluIGBIRUxQbWlzc2AuIA0KDQpgYGB7cn0NCiNZb3VyIGNvZGUgaGVyZSANCnN1bW1hcmlzZShIRUxQbWlzcywgZGV0b3ggPSBzdW0oZTJiLCBuYS5ybSA9VFJVRSkpDQpgYGANCg0KDQozLiBtZWFuIHRpbWUgKGluIGRheXMpIHRvIGZpcnN0IHVzZSBvZiBhbnkgc3Vic3RhbmNlIHBvc3QtZGV0b3ggZm9yIGFsbCB0aGUgcGVvcGxlIGluIGBIRUxQbWlzc2ANCg0KDQpgYGB7cn0NCiNZb3VyIGNvZGUgaGVyZSANCnN1bW1hcmlzZShIRUxQbWlzcywgZmlyc3RfdXNlID0gbWVhbihkYXlzYW55c3ViLCBuYS5ybT1UUlVFKSkNCmBgYA0KDQoNCg0KIyMgVGFzayAzOiBHcm91cCBTdW1tYXJpZXMgIA0KDQoqUmVwZWF0IHRhc2sgMiBhYm92ZSwgYnV0IGFkZCBjb2RlIGNodW5rcyB0byBjYWxjdWxhdGUgcmVzdWx0IGdyb3VwLWJ5LWdyb3VwIGFjY29yZGluZyB0byBlYWNoIHByb21wdCAoaS5lLiBlYWNoIHByb210IHNob3VsZCBoYXZlIHRocmVlIHN0YXRlbWVudHMgZm9yIGVhY2ggb2YgdGhlIHRocmVlIHByb21wdHMgaW4gdGFzayAyKS4gIEJlIHN1cmUgdG8gc2hvdyBhbGwgUiBjb2RlIGFuZCB3cml0ZSBhIHNlbnRlbmNlIG9yIHR3byBhYm91dCB3aGF0IHlvdSBvYnNlcnZlIGluIHRoZSByZXN1bHRzLiBSZW1lbWJlciwgeW91IGNhbiBhZGQgbXVsdGlwbGUgc3RhdGlzdGljcyBpbnNpZGUgYHN1bW1hcnlgLiogDQoNCg0KLSBtYWxlcyB2ZXJzdXMgZmVtYWxlcw0KLSBob21lbGVzcyBvciBub3QNCi0gc3Vic3RhbmNlDQotIGJyZWFrIGRvd24gdGhlIGhvbWVsZXNzIHZlcnN1cyBob3VzZWQgZnVydGhlciwgYnkgc2V4DQotIGhvbWVsZXNzIHZlcnN1cyBob3VzZWQgYnJva2VuIGRvd24gYnkgc3Vic3RhbmNlDQoNCiMjIyBtYWxlcyB2ZXJzdXMgZmVtYWxlcw0KYGBge3J9DQojWW91ciBjb2RlIGhlcmUNCkhFTFBtaXNzICU+JQ0KICBncm91cF9ieShzZXgpICU+JQ0KICBzdW1tYXJpc2UoY2FzZXMgPSBuKCksDQogICAgICAgICAgICBkZXRveCA9IHN1bShlMmIsIG5hLnJtID1UUlVFKSwNCiAgICAgICAgICAgIGZpcnN0X3VzZSA9IG1lYW4oZGF5c2FueXN1YiwgbmEucm09VFJVRSkpDQpgYGANClRoaXMgdGFibGUgc2hvd3MgdGhhdCB0aGUgbWFsZXMgZW50ZXJlZCBtb3JlIGRldG94IHByb2dyYW1zIHdpdGhpbiB0aGUgcGFzdCA2IG1vbnRocywgYW5kIHRoZXkgdXNlZCBhIHN1YnN0YW5jZSBhZnRlciBkZXRveGluZyBpbiBhIHNob3J0ZXIgYW1vdW50IG9mIGRheXMgY29tcGFyZWQgdG8gZmVtYWxlcy4NCg0KDQojIyMgaG9tZWxlc3Mgb3Igbm90DQpgYGB7cn0NCiNZb3VyIGNvZGUgaGVyZQ0KSEVMUG1pc3MgJT4lDQogIGdyb3VwX2J5KGhvbWVsZXNzKSAlPiUNCiAgc3VtbWFyaXNlKGNhc2VzID0gbigpLA0KICAgICAgICAgICAgZGV0b3ggPSBzdW0oZTJiLCBuYS5ybSA9VFJVRSksDQogICAgICAgICAgICBmaXJzdF91c2UgPSBtZWFuKGRheXNhbnlzdWIsIG5hLnJtPVRSVUUpKQ0KYGBgDQpUaGlzIHRhYmxlcyBzaG93cyB0aGF0IGhvbWVsZXNzIHBlb3BsZSB3ZXJlIGluIG1vcmUgZGV0b3ggcHJvZ3JhbXMgaW4gdGhlIHBhc3QgNiBtb250aHMgYW5kIHVzZWQgYSBzdWJzdGFuY2UgaW4gYSBzaG9ydGVyIGFtb3VudCBvZiB0aW1lIGFmdGVyIGRldG94aW5nLg0KDQoNCiMjIyBzdWJzdGFuY2UNCmBgYHtyfQ0KI1lvdXIgY29kZSBoZXJlDQpIRUxQbWlzcyAlPiUNCiAgZ3JvdXBfYnkoc3Vic3RhbmNlKSAlPiUNCiAgc3VtbWFyaXNlKGNhc2VzID0gbigpLA0KICAgICAgICAgICAgZGV0b3ggPSBzdW0oZTJiLCBuYS5ybSA9VFJVRSksDQogICAgICAgICAgICBmaXJzdF91c2UgPSBtZWFuKGRheXNhbnlzdWIsIG5hLnJtPVRSVUUpKQ0KYGBgDQpUaGlzIHRhYmxlIHNob3dzIHRoYXQgYWxjb2hvbCBpcyB0aGUgbW9zdCBjb21tb24gc3Vic3RhbmNlIGFidXNlZCB3aXRoaW4gdGhlIHBhdGllbnRzLCBhbmQgaXMgcmVzcG9uc2libGUgZm9yIHRoZSBtb3N0IGRldG94IHByb2dyYW1zLCBidXQgdGhvc2Ugd2hvIHVzZWQgaGVyb2luIHVzZWQgYSBzdWJzdGFuY2UgYWZ0ZXIgZGV0b3hpbmcgbXVjaCBmYXN0ZXIgdGhhbiB0aGUgb3RoZXJzLg0KDQoNCiMjIyBob21lbGVzcyB2ZXJzdXMgaG91c2VkIGJyb2tlbiBkb3duIGJ5IHNleA0KYGBge3J9DQojWW91ciBjb2RlIGhlcmUNCkhFTFBtaXNzICU+JQ0KICBncm91cF9ieShob21lbGVzcyxzZXgpICU+JQ0KICBzdW1tYXJpc2UoY2FzZXMgPSBuKCksDQogICAgICAgICAgICBkZXRveCA9IHN1bShlMmIsIG5hLnJtID1UUlVFKSwNCiAgICAgICAgICAgIGZpcnN0X3VzZSA9IG1lYW4oZGF5c2FueXN1YiwgbmEucm09VFJVRSkpDQpgYGANClRoaXMgdGFibGUgc2hvd3MgdGhhdCByZWdhcmRsZXNzIG9mIGhvdXNpbmcgc3RhdHVzLCBmZW1hbGVzIHdlbnQgdG8gYSBtdWNoIGxvd2VyIGFtb3VudCBvZiBkZXRveCBwcm9ncmFtcyB3aXRoaW4gdGhlIHBhc3QgNiBtb250aHMsIGFuZCB0aGV5IGFsc28gdXNlZCBzdWJzdGFuY2VzIGFmdGVyIGRldG94aW5nLCBvbiBhdmVyYWdlLCBhZnRlciBhIGxvbmdlciBwZXJpb2Qgb2YgdGltZSBjb21wYXJlZCB0byBtYWxlcy4NCg0KDQojIyMgaG9tZWxlc3MgdmVyc3VzIGhvdXNlZCBicm9rZW4gZG93biBieSBzdWJzdGFuY2UNCmBgYHtyfQ0KI1lvdXIgY29kZSBoZXJlDQpIRUxQbWlzcyAlPiUNCiAgZ3JvdXBfYnkoaG9tZWxlc3Msc3Vic3RhbmNlKSAlPiUNCiAgc3VtbWFyaXNlKGNhc2VzID0gbigpLA0KICAgICAgICAgICAgZGV0b3ggPSBzdW0oZTJiLCBuYS5ybSA9VFJVRSksDQogICAgICAgICAgICBmaXJzdF91c2UgPSBtZWFuKGRheXNhbnlzdWIsIG5hLnJtPVRSVUUpKQ0KYGBgDQpUaGlzIHRhYmxlcyBzaG93cyB0aGF0IHRob3NlIHdobyB3ZXJlIGhvbWVsZXNzIGFuZCBhYnVzZWQgYWxjb2hvbCwgd2FzIHRoZSBsYXJnZXN0IGdyb3VwIG9mIHRob3NlIHdobyBlbnRlcmVkIGEgZGV0b3ggcHJvZ3JhbSB3aXRoaW4gdGhlIHBhc3QgNiBtb250aHMgcmVnYXJkbGVzcyBvZiBhbnkgb3RoZXIgaG91c2luZy9zdWJzdGFuY2UgY29tYmluYXRpb24uIEhvd2V2ZXIsIHRob3NlIHdobyB3ZXJlIGhvbWVsZXNzIGFuZCB1c2VkIGhlcm9pbiBzaG93ZWQgYSBzaWduaWZpY2FudGx5IGZhc3RlciByZWxhcHNlIGFmdGVyIGRldG94aW5nIGNvbXBhcmVkIHRvIG90aGVyIGdyb3Vwcy4gDQoNCg0KIyMgVGFzayA0OiBEYXRhIFZpc3VhbGl6YXRpb24gJiBPYnNlcnZhdGlvbnMNCg0KKkluY2x1ZGUgb25lIG9yIG1vcmUgaW50ZXJlc3RpbmcgcGxvdHMgZnJvbSB0aGlzIGRhdGEgc2V0IGludm9sdmluZyBhdCBsZWFzdCAzIHZhcmlhYmxlcyBwZXIgcGxvdC4gV3JpdGUgYSBmZXcgc2VudGVuY2VzIHRvIGV4cGxhaW4gdGhlIHN0b3J5IHRoYXQgeW91ciBwbG90IHRlbGxzIGFib3V0IHRoZXNlIGRhdGEuICBZb3UgY2FuIGV4cGFuZCBvbiB0aGUgcmVsYXRpb25zaGlwcyB0aGF0IHlvdSBzdHVkaWVkIGluIFRhc2sgMiwgb3IgeW91IGNhbiBleHBsb3JlIGEgZGlmZmVyZW50IGdyb3VwIG9mIHZhcmlhYmxlcyBpbiBgSEVMUG1pc3NgIHRoYXQgc2hvdyBzb21ldGhpbmcgaW50ZXJlc3RpbmcuIFJlbWVtYmVyIHRvIHVzZSB0aGUgaW50ZXJhY3RpdmUgY29tbWFuZHMgaW4gdGhlIGNvbnNvbGUsIGdlbmVyYXRlIHRoZSBSIGNvbW1hbmRzIHRoYXQgd2lsbCByZXByb2R1Y2UgeW91ciBwbG90LCBhbmQgdGhlbiBwYXN0ZSB0aGUgUiBjb21tYW5kcyBpbnRvIGFuIFIgY2h1bmsgaW4gdGhlIFJNYXJrZG93biBmaWxlLiogIA0KDQoqUmVtZW1iZXIsIHlvdSBjYW4gdXNlKiBgZXNxdWlzc2VyYCAqb3IqIGBtcGxvdGAgKmluIHlvdXIgY29uc29sZS4gQnV0IG9ubHkgaW5jbHVkZSB0aGUgZ2dwbG90IGNvZGUgaW4gdGhpcyBSbWQgZG9jdW1lbnQuKg0KDQoNCmBgYHtyfQ0KIyBZb3VyIENvZGUgaGVyZS4NCmdncGxvdChIRUxQbWlzcykgKw0KICBhZXMoeCA9IGFnZSwgeSA9IGhvc3BpdGFsaXphdGlvbnMsIGZpbGwgPSBzZXgsIGNvbG91ciA9IHNleCkgKw0KICBnZW9tX3BvaW50KHNoYXBlID0gImNpcmNsZSIsIHNpemUgPSAxLjUpICsNCiAgc2NhbGVfZmlsbF9odWUoZGlyZWN0aW9uID0gMSkgKw0KICBzY2FsZV9jb2xvcl9odWUoZGlyZWN0aW9uID0gMSkgKw0KICB0aGVtZV9taW5pbWFsKCkNCmBgYA0KDQpUaGlzIGdyYXBoIHNob3dzIHRoZSBzcHJlYWQgb2YgYWdlIGNvbXBhcmVkIHRvIHRoZSBudW1iZXIgb2YgaG9zcGl0YWxpemF0aW9ucyBtYWxlcyB2ZXJzdXMgZmVtYWxlcy4gVGhlIHBsb3Qgc2hvd3Mgc2ltaWxhcmx5IHNoYXBlZCBkaXN0cmlidXRpb25zLCBidXQgaXQgbG9va3MgbGlrZSBmZW1hbGVzIG1pZ2h0IGhhdmUgYSBoaWdoZXIgYXZlcmFnZSBvZiBob3NwaXRhbGl6YXRpb25zLCByZWdhcmRsZXNzIG9mIGFnZS4gVGhlcmUgYWxzbyBsb29rcyBsaWtlIHRoZXJlIGlzIGEgcG9zc2libGUgb3V0bGllcjogYSB3b21hbiBhYm91dCA0NSB5ZWFycyBvbGQgaGFkIDEwMCBob3NwaXRhbGl6YXRpb25zLg0KDQo=</div>
 
 
 
