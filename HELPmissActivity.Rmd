@@ -1,6 +1,6 @@
 ---
 title: "HELPmiss (Data Verbs) Activity"
-author: "YOUR NAME HERE"
+author: "Allison Rachor"
 output: html_notebook
 ---
 
@@ -17,7 +17,7 @@ library(mosaicData) # includes the `HELPmiss` data set
 
 # Load the `HELPmiss` data set into our RStudio environment
 data("HELPmiss", package = "mosaicData")
-
+?HELPmiss
 ```
 
 ## Helpful links: 
@@ -39,6 +39,9 @@ data("HELPmiss", package = "mosaicData")
 - investigate by searching R help documentation
 - there's a research paper cited where additional detail is provided
 
+### Description
+
+  The data set comes from a clinical trial for adults that are inpatients from a detoxification unit. The patients received an assessment that helped provide them with eventual primary medical care. There are 470 observations recording 28 variables where each case represents a patient.
 
 
 ## Task 2: Basic Summaries 
